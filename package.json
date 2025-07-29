@@ -8,17 +8,12 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "body-parser": "^2.2.0",
-    "debug": "^4.4.1",
     "drizzle-orm": "^0.44.4",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "knex": "^3.1.0",
     "pg": "^8.16.3",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.7",
-    "sequelize-cli": "^6.6.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
@@ -28,7 +23,6 @@
     "babel-jest": "^30.0.5",
     "dotenv": "^17.2.1",
     "jest": "^30.0.5",
-    "sequelize-auto": "^0.8.8",
     "supertest": "^7.1.4"
   },
   "type": "module"
