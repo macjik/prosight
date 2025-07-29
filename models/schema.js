@@ -1,4 +1,3 @@
-// models/locus.js
 import { relations } from 'drizzle-orm';
 import { integer, pgTable, varchar, text } from 'drizzle-orm/pg-core';
 
