@@ -155,3 +155,96 @@ router.get('/', ensureAuth, async (req, res) => {
 });
 
 export default router;
+
+/**
+ * @swagger
+ * tags:
+ *   name: Locus
+ *   description: Locus operations. Ensure to authorize first in "Auth" section before accessing /api/locus
+ */
+
+/**
+ * @swagger
+ * /api/locus:
+ *   get:
+ *     summary: Get locus data with optional filters
+ *     tags: [Locus]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: id
+ *         schema:
+ *           type: array
+ *           items:
+ *             type: integer
+ *         description: Filter by one or more locus IDs
+ *         style: form
+ *         explode: false
+ *       - in: query
+ *         name: assemblyId
+ *         schema:
+ *           type: string
+ *         description: Filter by assembly ID
+ *       - in: query
+ *         name: regionId
+ *         schema:
+ *           type: array
+ *           items:
+ *             type: integer
+ *         description: Filter by one or more region IDs
+ *         style: form
+ *         explode: false
+ *       - in: query
+ *         name: membershipStatus
+ *         schema:
+ *           type: string
+ *         description: Filter by membership status
+ *       - in: query
+ *         name: sideload
+ *         schema:
+ *           type: string
+ *           enum: [locusMembers]
+ *         description: Sideload locus members (admin only)
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *           default: 1
+ *         description: Page number for pagination
+ *       - in: query
+ *         name: rows
+ *         schema:
+ *           type: integer
+ *           default: 1000
+ *         description: Number of rows per page
+ *       - in: query
+ *         name: sortBy
+ *         schema:
+ *           type: string
+ *           enum: [id, memberCount, locusStart, locusStop]
+ *           default: id
+ *         description: Sort field
+ *       - in: query
+ *         name: sortOrder
+ *         schema:
+ *           type: string
+ *           enum: [asc, desc]
+ *           default: asc
+ *         description: Sort order
+ *     responses:
+ *       200:
+ *         description: List of loci (with optional sideloaded members)
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *       401:
+ *         description: Unauthorized
+ *       403:
+ *         description: Forbidden (e.g. sideloading by non-admin)
+ *       500:
+ *         description: Internal server error
+ */
