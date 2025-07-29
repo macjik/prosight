@@ -3,8 +3,7 @@
 ## 📌 Environment Variables (REQUIRED)
 Create `.env` file in root directory with:
 
-```
-# 1. Clone repository
+```# 1. Clone repository
 git clone [your-repo-url]
 cd prosight
 
