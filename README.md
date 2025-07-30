@@ -4,7 +4,7 @@
 Create `.env` file in root directory with:
 
 ## 1. Clone repository
-git clone [your-repo-url]
+git clone https://github.com/macjik/prosight.git
 cd prosight
 
 ## 2. Install dependencies
@@ -12,9 +12,9 @@ yarn install
 
 ## 3. Set up environment (if not using provided DB)
 env
-DB_URL=postgres://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs
+DB_URL=[DB_URL]
 PORT=3010
-JWT_SECRET=your secure token
+JWT_SECRET=[yourToken]your secure token
 
 cp .env.example .env
 nano .env  # Edit with your credentials
